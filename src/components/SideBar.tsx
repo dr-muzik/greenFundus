@@ -83,4 +83,5 @@ export default SideBar;
 // eslint-disable-next-line react-refresh/only-export-components
 export const navLinks = ['Home', 'Products', 'Insurance', 'Payments', 'Community'];
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const navLinksTwo = ['Settings', 'Security'];
