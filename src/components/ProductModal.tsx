@@ -53,7 +53,7 @@ const ProductModal: React.FC = () => {
 					<p onClick={closeModal} className="flex items-center gap-1 cursor-pointer">
 						close{' '}
 						<span>
-							<img src="/src/assets/svg-icons/close-circle.svg" width={15} alt="close" />
+							<img src="/svg-icons/close-circle.svg" width={15} alt="close" />
 						</span>
 					</p>
 				</div>

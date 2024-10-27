@@ -35,7 +35,7 @@ const Checkout: React.FC = () => {
 		>
 			<div className="pt-20 lg:ps-6 lg:pe-4 p-4 w-full max-w-[571px] lg:max-w-[680px]  rounded-lg shadow-sm cursor-pointer">
 				<p className="flex gap-1 mb-5 text-[#071B06] font-medium" onClick={backToCart}>
-					<img src="/src/assets/svg-icons/arrow-left.svg" alt="" /> Back to Cart
+					<img src="/svg-icons/arrow-left.svg" alt="" /> Back to Cart
 				</p>
 				{/* <!-- Delivery Information Section --> */}
 				<div className="mb-8 bg-white rounded-lg w-full p-4">
@@ -104,12 +104,12 @@ const Checkout: React.FC = () => {
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						{/* <!-- Credit/Debit Card --> */}
 						<div className="border border-gray-300 rounded-lg p-4 flex items-center gap-2 cursor-pointer hover:bg-gray-100">
-							<img src="/src/assets/svg-icons/card.svg" alt="Card Icon" className="w-5 h-5" />
+							<img src="/svg-icons/card.svg" alt="Card Icon" className="w-5 h-5" />
 							<span className="text-sm font-medium text-gray-700">Credit / Debit Card</span>
 						</div>
 						{/* <!-- Bank Transfer --> */}
 						<div className="border border-gray-300 rounded-lg p-4 flex items-center gap-2 cursor-pointer hover:bg-gray-100">
-							<img src="/src/assets/svg-icons/share.svg" alt="Bank Icon" className="w-5 h-5" />
+							<img src="/svg-icons/share.svg" alt="Bank Icon" className="w-5 h-5" />
 							<span className="text-sm font-medium text-gray-700">Bank Transfer</span>
 						</div>
 					</div>

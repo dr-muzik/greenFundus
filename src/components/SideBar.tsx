@@ -61,11 +61,11 @@ const SideBar: React.FC = () => {
 			} transition-transform duration-[1000ms] ease-in-out z-40 absolute top-0 lg:translate-x-0 `}
 		>
 			<div className="mb-3 sm:mb-10 mt-7 ps-2">
-				<img src="/src/assets/svg-icons/logo.svg" alt="logo" style={{ fill: 'red' }} />
+				<img src="/svg-icons/logo.svg" alt="logo" style={{ fill: 'red' }} />
 			</div>
 			<div className="ps-4 mt-7 flex gap-3 sm:hidden mb-5">
 				<div className="">
-					<img width={40} src="/src/assets/images/Frame 12.png" alt="dp" />
+					<img width={40} src="/images/Frame 12.png" alt="dp" />
 				</div>
 				<div className=" ">
 					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>

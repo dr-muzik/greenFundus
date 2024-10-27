@@ -135,7 +135,7 @@ const Cart: React.FC = () => {
 											onClick={() => handleRemoveFromCart(product)}
 											className="flex items-center gap-1 text-[#BD0505] hover:text-red-700"
 										>
-											<img src="/src/assets/svg-icons/trash.svg" alt="Remove" className="w-4 h-4" />
+											<img src="/svg-icons/trash.svg" alt="Remove" className="w-4 h-4" />
 											<span className="text-sm">Remove item</span>
 										</button>
 										<div className="flex items-center gap-3">

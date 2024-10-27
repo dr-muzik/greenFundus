@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
 				<img
 					onClick={showSideBar}
 					className="lg:hidden"
-					src="/src/assets/svg-icons/breadcrumb.svg"
+					src="/svg-icons/breadcrumb.svg"
 					alt="breadcrumb"
 				/>
 				<p className="text-2xl font-semibold" style={{ color: '#071B06' }}>
@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
 					<img
 						width={50}
 						onClick={() => setCartPage('Cart')}
-						src="/src/assets/svg-icons/cart.svg"
+						src="/svg-icons/cart.svg"
 						alt="cart"
 						className="cursor-pointer"
 					/>
@@ -58,7 +58,7 @@ const NavBar: React.FC = () => {
 					)}
 				</div>
 				<div className="border-l-2 ps-4 ml-4 hidden sm:block">
-					<img width={50} src="/src/assets/images/Frame 12.png" alt="dp" />
+					<img width={50} src="/images/Frame 12.png" alt="dp" />
 				</div>
 				<div className="hidden sm:block">
 					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>
