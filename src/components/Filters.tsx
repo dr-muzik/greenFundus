@@ -24,7 +24,7 @@ const Filters: React.FC<IFilters> = ({ filterType, list }) => {
 			>
 				<span className="text-[#758193] text-xs font-semibold">{filterType}:</span>{' '}
 				{currentShowValue}
-				<img src="/src/assets/svg-icons/arrow-down.svg" alt="arrow-down" />
+				<img src="/svg-icons/arrow-down.svg" alt="arrow-down" />
 			</div>
 			<div
 				className={`${

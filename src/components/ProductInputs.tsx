@@ -31,7 +31,7 @@ const FilterBar: React.FC<IProductSearch> = ({ getFilteredProducts }) => {
 				className="p-3 flex border-2 border-[#EBEEF4] rounded-lg gap-3 mb-2 w-full max-w-[335px]"
 				id="input-search"
 			>
-				<img src="/src/assets/svg-icons/search-normal.svg" alt="search" />
+				<img src="/svg-icons/search-normal.svg" alt="search" />
 				<input
 					type="text"
 					value={searchTerm}

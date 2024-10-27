@@ -5,6 +5,7 @@ import { setIsModalOpen } from '../store/slices/modalSlice';
 import { addToCart } from '../store/slices/cartSlice';
 import { ICard } from '../interfaces/interface';
 import { useNavigate } from 'react-router-dom';
+import { successToast } from '../utils/toast';
 
 const ProductModal: React.FC = () => {
 	// const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,10 +22,12 @@ const ProductModal: React.FC = () => {
 		closeModal();
 		console.log(product);
 		dispatch(addToCart(product));
+		successToast('Successfully Added to Cart!');
 	};
 
 	const ToCheckOut = (product: ICard) => {
 		dispatch(addToCart(product));
+		successToast('Successfully Added to Cart!');
 		navigate('/dashboard/Products/cart/Checkout');
 		closeModal();
 	};
