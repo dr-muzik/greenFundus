@@ -8,7 +8,7 @@ export interface IProductSearch {
 }
 const FilterBar: React.FC<IProductSearch> = ({ getFilteredProducts }) => {
 	const [searchTerm, setSearchTerm] = useState('');
-	const [filteredProducts, setFilteredProducts] = useState(productCard);
+	const [filteredProducts, setFilteredProducts] = useState<ICard[]>([]);
 
 	// Handle search input changes
 	const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
