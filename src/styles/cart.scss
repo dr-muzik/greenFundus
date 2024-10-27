@@ -28,11 +28,12 @@
 					gap: 20px !important;
 					padding-bottom: 10px !important;
 				}
-				// .svg .remove {
-				// 	@media (max-width: 600px) {
-				// 		display: none;
-				// 	}
-				// }
+				.svg .remove {
+					color: #bd0505 !important;
+					@media (max-width: 372px) {
+						display: none;
+					}
+				}
 			}
 		}
 	}

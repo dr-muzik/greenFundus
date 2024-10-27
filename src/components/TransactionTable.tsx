@@ -129,7 +129,7 @@ const TransactionTable: React.FC = () => {
 						>
 							{row.cells.map((cell) => (
 								<div key={cell.column.id} className="flex justify-between">
-									<div className="font-medium text-[#758193]">{cell.column.Header}:</div>
+									<div className="font-medium text-[#758193]">{cell.column.render('Header')}:</div>
 									<div>{cell.render('Cell')}</div>
 								</div>
 							))}
@@ -137,33 +137,45 @@ const TransactionTable: React.FC = () => {
 					);
 				})}
 			</div>
+
 			<div className="hidden md:block ">
 				<table {...getTableProps()} className="w-full bg-white">
 					<thead className="border-t text-left w-full">
-						{headerGroups.map((headerGroup) => (
-							<tr {...headerGroup.getHeaderGroupProps()}>
-								{headerGroup.headers.map((column) => (
-									<th
-										{...column.getHeaderProps()}
-										className="px-4 py-4 font-medium  text-[#758193]"
-									>
-										{column.render('Header')}
-									</th>
-								))}
-							</tr>
-						))}
+						{headerGroups.map((headerGroup) => {
+							const { key, ...headerGroupProps } = headerGroup.getHeaderGroupProps();
+							return (
+								<tr key={key} {...headerGroupProps}>
+									{headerGroup.headers.map((column) => {
+										const { key, ...columnProps } = column.getHeaderProps();
+										return (
+											<th
+												key={key}
+												{...columnProps}
+												className="px-4 py-4 font-medium text-[#758193]"
+											>
+												{column.render('Header')}
+											</th>
+										);
+									})}
+								</tr> // Ensure no whitespace here
+							);
+						})}
 					</thead>
 					<tbody {...getTableBodyProps()}>
 						{rows.map((row) => {
 							prepareRow(row);
+							const { key, ...rowProps } = row.getRowProps();
 							return (
-								<tr {...row.getRowProps()} className="border-t">
-									{row.cells.map((cell) => (
-										<td {...cell.getCellProps()} className="px-4 py-2 whitespace-nowrap">
-											{cell.render('Cell')}
-										</td>
-									))}
-								</tr>
+								<tr key={key} {...rowProps} className="border-t">
+									{row.cells.map((cell) => {
+										const { key, ...cellProps } = cell.getCellProps();
+										return (
+											<td key={key} {...cellProps} className="px-4 py-2 whitespace-nowrap">
+												{cell.render('Cell')}
+											</td>
+										);
+									})}
+								</tr> // Ensure no whitespace here
 							);
 						})}
 					</tbody>

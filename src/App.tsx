@@ -1,23 +1,38 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import MainLayout from './Layout/MainLayout';
-import Dashboard from './Pages/Dashboard/Dashboard';
+import Cart from './Pages/Dashboard/Cart';
+import Checkout from './Pages/Dashboard/Checkout';
+import Home from './Pages/Dashboard/Home';
+import Insurance from './Pages/Dashboard/Insurance';
+import Payment from './Pages/Dashboard/Payment';
+import Products from './Pages/Dashboard/Products';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Community from './Pages/Dashboard/Community';
+import { AnimatePresence } from 'framer-motion';
+import { ToastContainer } from 'react-toastify';
 
 const App: React.FC = () => {
 	return (
-		<>
+		<AnimatePresence mode="wait">
 			<Router>
 				<Routes>
 					<Route path="/" element={<MainLayout />}>
-						<Route index element={<Dashboard />} />
-						<Route path="/register" element={<Register />} />
+						<Route index element={<Register />} />
 						<Route path="/login" element={<Login />} />
+						<Route path="/dashboard/Home" element={<Home />} />
+						<Route path="/dashboard/Products" element={<Products />} />
+						<Route path="/dashboard/Insurance" element={<Insurance />} />
+						<Route path="/dashboard/Payments" element={<Payment />} />
+						<Route path="/dashboard/Community" element={<Community />} />
+						<Route path="/dashboard/Products/cart" element={<Cart />} />
+						<Route path="/dashboard/Products/cart/Checkout" element={<Checkout />} />
 					</Route>
 				</Routes>
 			</Router>
-		</>
+			<ToastContainer />
+		</AnimatePresence>
 	);
 };
 

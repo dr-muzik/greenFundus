@@ -2,15 +2,31 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { setIsModalOpen } from '../store/slices/modalSlice';
+import { addToCart } from '../store/slices/cartSlice';
+import { ICard } from '../interfaces/interface';
+import { useNavigate } from 'react-router-dom';
 
 const ProductModal: React.FC = () => {
 	// const [isModalOpen, setIsModalOpen] = useState(false);
 	const isModalOpen = useSelector((state: RootState) => state.modal.isModalOpen);
 	const modalProduct = useSelector((state: RootState) => state.modal.modalProduct);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const closeModal = () => {
 		dispatch(setIsModalOpen(false));
+	};
+
+	const handleAddToCart = (product: ICard) => {
+		closeModal();
+		console.log(product);
+		dispatch(addToCart(product));
+	};
+
+	const ToCheckOut = (product: ICard) => {
+		dispatch(addToCart(product));
+		navigate('/dashboard/Products/cart/Checkout');
+		closeModal();
 	};
 
 	return (
@@ -65,13 +81,13 @@ const ProductModal: React.FC = () => {
 				{/* <!-- Buttons --> */}
 				<div className="space-y-2">
 					<button
-						onClick={closeModal}
+						onClick={() => ToCheckOut(modalProduct!)}
 						className="w-full py-2 lg:py-[15.5px] bg-transparent border border-[#35C12F] text-[#35C12F] text-sm font-semibold rounded-lg hover:bg-[#35C12F] hover:text-white transition duration-200"
 					>
 						Buy Now
 					</button>
 					<button
-						onClick={closeModal}
+						onClick={() => handleAddToCart(modalProduct!)}
 						className="w-full py-2 lg:py-[15.5px] bg-transparent border border-[#35C12F] text-[#35C12F]  text-sm font-semibold rounded-lg hover:bg-[#35C12F] hover:text-white transition duration-200"
 					>
 						Add To Cart

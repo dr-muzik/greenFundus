@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsOpen, setActivePage } from '../store/slices/navigationSlice';
 import { RootState } from '../store/store';
+import { useNavigate } from 'react-router-dom';
+import { setUser } from '../store/slices/userSlice';
 
 const NavBar: React.FC = () => {
 	const dispatch = useDispatch();
 	const activePage = useSelector((state: RootState) => state.navigation.activePage);
 	const productInCart = useSelector((state: RootState) => state.cart.cartProduct);
-
+	const user = useSelector((state: RootState) => state.user.user);
+	const navigate = useNavigate();
 	const showSideBar = () => {
 		dispatch(setIsOpen(true));
 		console.log('clicked');
 	};
 
+	useEffect(() => {
+		const storedUsername = localStorage.getItem('userDetails');
+		if (storedUsername) {
+			dispatch(setUser(JSON.parse(storedUsername)));
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	const setCartPage = (page: string) => {
 		dispatch(setActivePage(page));
+		navigate('/dashboard/Products/cart');
 	};
 
 	return (
@@ -34,13 +46,13 @@ const NavBar: React.FC = () => {
 				<div className="relative">
 					<img
 						width={50}
-						onClick={() => setCartPage('Carts')}
+						onClick={() => setCartPage('Cart')}
 						src="/src/assets/svg-icons/cart.svg"
 						alt="cart"
 						className="cursor-pointer"
 					/>
 					{productInCart.length > 0 && (
-						<div className="absolute top-[-5px] right-[-5px] text-sm bg-slate-500 text-white font-bold rounded-[50%] p-[2px] px-[6px]">
+						<div className="absolute top-[-5px] right-[-5px] text-sm bg-[#35C12F] text-white font-bold rounded-[70%] py-[1px] px-[8px]">
 							{productInCart.length}
 						</div>
 					)}
@@ -50,7 +62,7 @@ const NavBar: React.FC = () => {
 				</div>
 				<div className="hidden sm:block">
 					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>
-						Percy Jackson
+						{user.name}
 					</p>
 					<p className="text-sm" style={{ color: '#289123' }}>
 						Free plan

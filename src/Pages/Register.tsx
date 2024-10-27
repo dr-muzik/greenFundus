@@ -1,10 +1,14 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Iform } from '../interfaces/interface';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../store/slices/userSlice';
+import { successToast } from '../utils/toast';
 
 const Register: React.FC = () => {
 	// const [error] = useState<Iform | null>(null);
-	const [formInput, setFormInput] = useState<Iform>({ username: '', email: '', password: '' });
+	const [formInput, setFormInput] = useState<Iform>({ name: '', email: '', password: '' });
+	const dispatch = useDispatch();
 
 	const formHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
@@ -13,11 +17,15 @@ const Register: React.FC = () => {
 
 		setFormInput((prevState) => ({ ...prevState, [name]: value }));
 	};
+	const navigate = useNavigate();
 
 	const formSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-
+		localStorage.setItem('userDetails', JSON.stringify(formInput));
 		console.log('form: ', formInput);
+		dispatch(setUser(formInput));
+		navigate('/dashboard/Home');
+		successToast('successfully Registered!');
 	};
 
 	return (
@@ -48,7 +56,7 @@ const Register: React.FC = () => {
 						</label>
 						<input
 							type="text"
-							name="username"
+							name="name"
 							id="username"
 							placeholder="Name"
 							onChange={formHandler}

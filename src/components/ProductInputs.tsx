@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Filters from './Filters';
-import { show, sortedBy1, sortedBy2 } from '../dummyData/data';
+import { productCard, show, sortedBy1, sortedBy2 } from '../dummyData/data';
+import { ICard } from '../interfaces/interface';
 
-const FilterBar: React.FC = () => {
+export interface IProductSearch {
+	getFilteredProducts: (value: ICard[]) => void;
+}
+const FilterBar: React.FC<IProductSearch> = ({ getFilteredProducts }) => {
+	const [searchTerm, setSearchTerm] = useState('');
+	const [filteredProducts, setFilteredProducts] = useState(productCard);
+
+	// Handle search input changes
+	const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const term = event.target.value.toLowerCase();
+		setSearchTerm(term);
+
+		// Filter products based on the search term
+		const filtered = productCard.filter(
+			(product) =>
+				product.productName.toLowerCase().includes(term) ||
+				product.description.toLowerCase().includes(term)
+		);
+		getFilteredProducts(filteredProducts);
+
+		setFilteredProducts(filtered);
+	};
 	return (
 		<div id="product-inputs" className="flex justify-between flex-wrap">
 			<div
@@ -10,7 +32,12 @@ const FilterBar: React.FC = () => {
 				id="input-search"
 			>
 				<img src="/src/assets/svg-icons/search-normal.svg" alt="search" />
-				<input type="text" placeholder="Search for products" />
+				<input
+					type="text"
+					value={searchTerm}
+					placeholder="Search for products..."
+					onChange={handleSearch}
+				/>
 			</div>
 			<Filters list={show} filterType={'show'} />
 			<Filters list={sortedBy1} filterType={'sort by'} />

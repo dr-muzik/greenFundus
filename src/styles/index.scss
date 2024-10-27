@@ -1,7 +1,7 @@
-@import './variables';
-@import './register.scss';
-@import './products-inputs.scss';
-@import './cart.scss';
+@use './variables';
+@use './register.scss';
+@use './products-inputs.scss';
+@use './cart.scss';
 
 @tailwind base;
 @tailwind components;
@@ -14,7 +14,7 @@ p {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
-	color: $text-primary;
+	color: variables.$text-primary;
 }
 
 .inter-600 {

@@ -1,16 +1,18 @@
 import React, { ChangeEvent, useState } from 'react';
 import { Iform } from '../interfaces/interface';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../store/slices/userSlice';
+import { successToast } from '../utils/toast';
 
 const Login: React.FC = () => {
 	// const [error] = useState<Iform | null>(null);
-	const [formInput, setFormInput] = useState<Iform>({ username: '', email: '', password: '' });
+	const [formInput, setFormInput] = useState<Iform>({ name: '', password: '' });
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const formHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
-
-		// event.target.name === 'email' ? setError({ ...error, email: 'Invalid Email' }) : setError(null);
-
 		setFormInput((prevState) => ({ ...prevState, [name]: value }));
 	};
 
@@ -18,6 +20,9 @@ const Login: React.FC = () => {
 		e.preventDefault();
 
 		console.log('form: ', formInput);
+		dispatch(setUser(formInput));
+		navigate('/dashboard/Home');
+		successToast('successfully Registered!');
 	};
 
 	return (

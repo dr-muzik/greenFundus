@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 import CommunityNavIcon from './nav-svg/CommunityNavIcon';
 import HomeNavIcon from './nav-svg/HomeNavIcon';
@@ -10,9 +11,12 @@ import { useDispatch } from 'react-redux';
 import { setActivePage, setIsOpen } from '../store/slices/navigationSlice';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
+import { useNavigate } from 'react-router-dom';
+import { setUser } from '../store/slices/userSlice';
 
 const SideBar: React.FC = () => {
 	const isOpen = useSelector((state: RootState) => state.navigation.isOpen);
+	const user = useSelector((state: RootState) => state.user.user);
 	const dispatch = useDispatch();
 	const [activeLink, setActiveLink] = useState('Home');
 	// const [isOpen, setIsOpen] = useState(false);
@@ -21,10 +25,34 @@ const SideBar: React.FC = () => {
 		console.log(isOpen);
 	}, [isOpen]);
 
+	useEffect(() => {
+		const storedUsername = localStorage.getItem('userDetails');
+		if (storedUsername) {
+			dispatch(setUser(JSON.parse(storedUsername)));
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	const navigate = useNavigate();
+
 	const setLinkActive = (link: string) => {
 		setActiveLink(link);
 		dispatch(setActivePage(link));
 		dispatch(setIsOpen(false));
+
+		link === 'Home'
+			? navigate('/dashboard/Home')
+			: link === 'Products'
+			? navigate('/dashboard/Products')
+			: link === 'Insurance'
+			? navigate('/dashboard/Insurance')
+			: link === 'Community'
+			? navigate('/dashboard/Community')
+			: link === 'Payments'
+			? navigate('/dashboard/Payments')
+			: link === 'Community'
+			? navigate('/dashboard/Community')
+			: navigate('/dashboard/Home');
 	};
 	return (
 		<aside
@@ -32,7 +60,7 @@ const SideBar: React.FC = () => {
 				isOpen ? 'translate-x-0' : '-translate-x-full'
 			} transition-transform duration-[1000ms] ease-in-out z-40 absolute top-0 lg:translate-x-0 `}
 		>
-			<div className="mb-3 last:sm:mb-10 mt-7 ps-2">
+			<div className="mb-3 sm:mb-10 mt-7 ps-2">
 				<img src="/src/assets/svg-icons/logo.svg" alt="logo" style={{ fill: 'red' }} />
 			</div>
 			<div className="ps-4 mt-7 flex gap-3 sm:hidden mb-5">
@@ -41,7 +69,7 @@ const SideBar: React.FC = () => {
 				</div>
 				<div className=" ">
 					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>
-						Percy Jackson
+						{user.name}
 					</p>
 					<p className="text-sm" style={{ color: '#289123' }}>
 						Free plan

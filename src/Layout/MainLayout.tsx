@@ -11,7 +11,7 @@ const MainLayout: React.FC = () => {
 	const dispatch = useDispatch();
 	const isOpen = useSelector((state: RootState) => state.navigation.isOpen);
 	const location = useLocation();
-	const show = ['/register', '/login'].includes(location.pathname);
+	const show = ['/', '/login'].includes(location.pathname);
 
 	return (
 		<>

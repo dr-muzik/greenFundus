@@ -3,6 +3,7 @@ import { ICard, IproductCard } from '../interfaces/interface';
 import { useDispatch } from 'react-redux';
 import { setIsModalOpen, setModalProduct } from '../store/slices/modalSlice';
 import { addToCart } from '../store/slices/cartSlice';
+import { successToast } from '../utils/toast';
 
 const Card: React.FC<IproductCard> = ({ product }) => {
 	const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Card: React.FC<IproductCard> = ({ product }) => {
 	const handleAddToCart = (product: ICard) => {
 		console.log(product);
 		dispatch(addToCart(product));
+		successToast('Successfully Added to Cart!');
 	};
 
 	return (
