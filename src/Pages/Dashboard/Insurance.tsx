@@ -22,7 +22,7 @@ const Insurance: React.FC = () => {
 			}}
 			className="pt-4 lg:ml-[242px] border-2 h-screen"
 		>
-			<div className="pt-20 lg:ps-6 pe-4">Insurance</div>
+			<div className="pt-20 lg:ps-6 pe-4 text-3xl px-5 text-[#758193]">Coming Soon!!!</div>
 		</motion.div>
 	);
 };

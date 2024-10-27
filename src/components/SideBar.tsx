@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../store/slices/userSlice';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const SideBar: React.FC = () => {
 	const isOpen = useSelector((state: RootState) => state.navigation.isOpen);
@@ -50,9 +51,11 @@ const SideBar: React.FC = () => {
 			? navigate('/dashboard/Community')
 			: link === 'Payments'
 			? navigate('/dashboard/Payments')
-			: link === 'Community'
-			? navigate('/dashboard/Community')
-			: navigate('/dashboard/Home');
+			: link === 'Settings'
+			? navigate('/dashboard/Settings')
+			: link === 'Security'
+			? navigate('/dashboard/Security')
+			: '';
 	};
 	return (
 		<aside
@@ -133,6 +136,12 @@ const SideBar: React.FC = () => {
 					</li>
 				))}
 			</nav>
+			<div
+				className="w-full ps-8 text-base  mt-3 text-[#758193] cursor-pointer"
+				onClick={() => navigate('/login')}
+			>
+				<LogoutIcon style={{ fill: '#758193' }} /> Logout
+			</div>
 		</aside>
 	);
 };

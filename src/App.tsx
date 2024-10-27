@@ -12,6 +12,8 @@ import Register from './Pages/Register';
 import Community from './Pages/Dashboard/Community';
 import { AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
+import Security from './Pages/Dashboard/Security';
+import Settings from './Pages/Dashboard/Settings';
 
 const App: React.FC = () => {
 	return (
@@ -26,6 +28,8 @@ const App: React.FC = () => {
 						<Route path="/dashboard/Insurance" element={<Insurance />} />
 						<Route path="/dashboard/Payments" element={<Payment />} />
 						<Route path="/dashboard/Community" element={<Community />} />
+						<Route path="/dashboard/Security" element={<Security />} />
+						<Route path="/dashboard/Settings" element={<Settings />} />
 						<Route path="/dashboard/Products/cart" element={<Cart />} />
 						<Route path="/dashboard/Products/cart/Checkout" element={<Checkout />} />
 					</Route>

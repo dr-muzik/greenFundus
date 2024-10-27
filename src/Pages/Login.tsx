@@ -3,7 +3,7 @@ import { Iform } from '../interfaces/interface';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../store/slices/userSlice';
-import { successToast } from '../utils/toast';
+import { errorToast, successToast } from '../utils/toast';
 
 const Login: React.FC = () => {
 	// const [error] = useState<Iform | null>(null);
@@ -18,11 +18,16 @@ const Login: React.FC = () => {
 
 	const formSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
-
-		console.log('form: ', formInput);
-		dispatch(setUser(formInput));
-		navigate('/dashboard/Home');
-		successToast('successfully Registered!');
+		if (formInput.email?.length === 0 || formInput.password.length === 0) {
+			errorToast('All fields are required!!!');
+			return;
+		} else {
+			localStorage.setItem('userDetails', JSON.stringify(formInput));
+			console.log('form: ', formInput);
+			dispatch(setUser(formInput));
+			navigate('/dashboard/Home');
+			successToast('Successfully Logged In!');
+		}
 	};
 
 	return (
@@ -70,7 +75,9 @@ const Login: React.FC = () => {
 					<p style={{ color: '#32A22E' }} className="mb-10">
 						Forgot password?
 					</p>
-					<button className="mb-6 text-center p-4 w-full rounded-md text-white">LOGIN</button>
+					<button className="mb-6 text-center p-4 bg-[#35C12F] hover:bg-green-800 transition duration-500 w-full rounded-md text-white">
+						LOGIN
+					</button>
 					<div className="w-full text-center">
 						<p className="text-white text-sm">
 							Don't have an account?{' '}

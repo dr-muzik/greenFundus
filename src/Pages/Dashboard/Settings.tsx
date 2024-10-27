@@ -8,7 +8,7 @@ const pageTransition = {
 	transition: { duration: 0.7 },
 };
 
-const Security: React.FC = () => {
+const Settings: React.FC = () => {
 	return (
 		<motion.div
 			initial="initial"
@@ -27,4 +27,4 @@ const Security: React.FC = () => {
 	);
 };
 
-export default Security;
+export default Settings;

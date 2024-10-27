@@ -85,13 +85,13 @@ const ProductModal: React.FC = () => {
 				<div className="space-y-2">
 					<button
 						onClick={() => ToCheckOut(modalProduct!)}
-						className="w-full py-2 lg:py-[15.5px] bg-transparent border border-[#35C12F] text-[#35C12F] text-sm font-semibold rounded-lg hover:bg-[#35C12F] hover:text-white transition duration-200"
+						className="w-full py-2 lg:py-[15.5px]  border border-[#35C12F] text-sm font-semibold rounded-lg bg-[#35C12F] transition duration-500 text-white "
 					>
 						Buy Now
 					</button>
 					<button
 						onClick={() => handleAddToCart(modalProduct!)}
-						className="w-full py-2 lg:py-[15.5px] bg-transparent border border-[#35C12F] text-[#35C12F]  text-sm font-semibold rounded-lg hover:bg-[#35C12F] hover:text-white transition duration-200"
+						className="w-full py-2 lg:py-[15.5px] bg-transparent border  text-[#35C12F]  text-sm font-semibold rounded-lg"
 					>
 						Add To Cart
 					</button>
