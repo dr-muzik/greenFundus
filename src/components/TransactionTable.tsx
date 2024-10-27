@@ -114,7 +114,7 @@ const TransactionTable: React.FC = () => {
 				<p className="text-gray-500 flex gap-3 items-center font-semibold">
 					See more transaction
 					<span>
-						<img src="/src/assets/svg-icons/arrow-right.svg" alt="right-arrow" />
+						<img src="/svg-icons/arrow-right.svg" alt="right-arrow" />
 					</span>
 				</p>
 			</div>

@@ -56,7 +56,7 @@ const Home: React.FC = () => {
 							</button>
 						</div>
 						<div>
-							<img src="/src/assets/svg-icons/security.svg" alt="security" />
+							<img src="/svg-icons/security.svg" alt="security" />
 						</div>
 					</div>
 					<div className="p-7 bg-[#ECFDEB] flex justify-between items-center mt-6 rounded-lg w-full">
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
 							</button>
 						</div>
 						<div>
-							<img src="/src/assets/svg-icons/truck.svg" alt="truck" />
+							<img src="/svg-icons/truck.svg" alt="truck" />
 						</div>
 					</div>
 				</div>
