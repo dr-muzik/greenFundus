@@ -31,11 +31,7 @@ const Login: React.FC = () => {
 			id="register"
 		>
 			<div className="hidden lg:block w-[50%]  bg-cover">
-				<img
-					className="w-full h-full object-contain"
-					src="/src/assets/images/login.png"
-					alt="signup_image"
-				/>
+				<img className="w-full h-full object-contain" src="/images/login.png" alt="signup_image" />
 			</div>
 			<div className="w-full max-w-[442px] lg:max-w-[50%] lg:w-[50%] lg:px-[70px] py-[10px] flex flex-col gap-9  items-center">
 				<div className="w-full  max-w-[442px]  ">
