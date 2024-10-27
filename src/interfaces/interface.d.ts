@@ -23,3 +23,7 @@ export interface ICard {
 export interface IproductCard {
 	product: ICard;
 }
+
+export interface IproductQuantity {
+	addMinus: string;
+}

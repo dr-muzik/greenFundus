@@ -28,12 +28,25 @@ const SideBar: React.FC = () => {
 	};
 	return (
 		<aside
-			className={`lg:fixed lg:top-0 lg:left-0 w-[242px] h-screen border-2 z-50 border-[#CFD2D8] bg-white transform ${
+			className={`lg:fixed lg:top-0 lg:left-0 w-[242px] h-screen border-2 z-20 border-[#CFD2D8] bg-white transform ${
 				isOpen ? 'translate-x-0' : '-translate-x-full'
 			} transition-transform duration-[1000ms] ease-in-out z-40 absolute top-0 lg:translate-x-0 `}
 		>
-			<div className="mb-10 mt-7 ps-2">
+			<div className="mb-3 last:sm:mb-10 mt-7 ps-2">
 				<img src="/src/assets/svg-icons/logo.svg" alt="logo" style={{ fill: 'red' }} />
+			</div>
+			<div className="ps-4 mt-7 flex gap-3 sm:hidden mb-5">
+				<div className="">
+					<img width={40} src="/src/assets/images/Frame 12.png" alt="dp" />
+				</div>
+				<div className=" ">
+					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>
+						Percy Jackson
+					</p>
+					<p className="text-sm" style={{ color: '#289123' }}>
+						Free plan
+					</p>
+				</div>
 			</div>
 			<nav className="px-4 list-none">
 				{navLinks.map((links, index) => (
@@ -64,11 +77,11 @@ const SideBar: React.FC = () => {
 						{links}
 					</li>
 				))}
-				<p className="pt-10" style={{ color: '#758193' }}>
+				<p className="sm:pt-10 pt-3" style={{ color: '#758193' }}>
 					----------------------------
 				</p>
 			</nav>
-			<nav className="px-4 list-none mt-10">
+			<nav className="px-4 list-none sm:mt-10 mt-3">
 				{navLinksTwo.map((links, index) => (
 					<li
 						key={index}

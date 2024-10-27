@@ -6,6 +6,8 @@ import Products from './Products';
 import Insurance from './Insurance';
 import Payment from './Payment';
 import Community from './Community';
+import Cart from './Cart';
+import Checkout from './Checkout';
 
 const Dashboard: React.FC = () => {
 	const activePage = useSelector((state: RootState) => state.navigation.activePage);
@@ -17,6 +19,8 @@ const Dashboard: React.FC = () => {
 			{activePage === 'Insurance' && <Insurance />}
 			{activePage === 'Payments' && <Payment />}
 			{activePage === 'Community' && <Community />}
+			{activePage === 'Carts' && <Cart />}
+			{activePage === 'Checkout' && <Checkout />}
 		</div>
 	);
 };
