@@ -139,7 +139,7 @@ const Checkout: React.FC = () => {
 								<div className="flex justify-between items-center">
 									<p className="text-md text-[#071B06] font-medium">{product.productName}</p>
 
-									<p className="text-[#35C12F] text-lg text-right border-2 ">{product.amount}</p>
+									<p className="text-[#35C12F] text-lg text-right ">{product.amount}</p>
 								</div>
 								<p className="text-xs  text-gray-500 leading-5">{product.description}</p>
 							</div>

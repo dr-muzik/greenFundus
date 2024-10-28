@@ -22,7 +22,7 @@ const Filters: React.FC<IFilters> = ({ filterType, list }) => {
 				onClick={() => handleDropdown('products')}
 				className="border-2 border-[#EBEEF4] rounded-lg gap-3 w-full flex justify-between items-center py-3 px-4 text-[#758193] text-sm font-medium cursor-pointer"
 			>
-				<span className="text-[#758193] text-xs font-semibold">{filterType}:</span>{' '}
+				<span className="text-[rgb(117,129,147)] text-xs font-semibold">{filterType}:</span>{' '}
 				{currentShowValue}
 				<img src="/svg-icons/arrow-down.svg" alt="arrow-down" />
 			</div>

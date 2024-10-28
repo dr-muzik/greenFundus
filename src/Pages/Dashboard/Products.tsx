@@ -49,26 +49,27 @@ const Products: React.FC = () => {
 				animate: pageTransition.animate,
 				exit: pageTransition.exit,
 			}}
-			className="pt-4 lg:ml-[242px] border-2"
+			className="pt-4 lg:ml-[242px] border-2 min-h-screen"
 		>
 			<div className="pt-20 lg:ps-6 pe-4">
-				<div className="rounded-lg bg-white p-4 mt-6 w-full ">
-					<ProductInputs getFilteredProducts={receiveProductSearch} />
-
-					<div className="mt-6 flex flex-wrap justify-around md:justify-normal gap-5 mb-12">
+				<div className="rounded-lg bg-white p-4 mt-6 w-full flex flex-col items-center">
+					<div className=" w-full max-w-[982.5px]">
+						<ProductInputs getFilteredProducts={receiveProductSearch} />
+					</div>
+					<div className="mt-6 flex flex-wrap justify-around md:justify-normal gap-5 mb-12  max-w-[982.5px]">
 						{currentProducts.length > 0 ? (
 							currentProducts.map((product, index) => <Card product={product} key={index} />)
 						) : (
 							<p className="text-gray-500 text-base italic">No products found.</p>
 						)}
 					</div>
-					<div className="w-full flex justify-end  mt-6 ">
-						<div className="w-max  flex gap-2 items-center">
+					<div className="w-full flex justify-end  mt-6  max-w-[982.5px]">
+						<div className="w-max  flex gap-2 items-center ">
 							<div
 								className="text-sm font-medium cursor-pointer text-[#071b06] flex gap-2 items-center hover:bg-[#dafed9] py-2 px-2 rounded-lg"
 								onClick={() => handlePageNumber('Previous')}
 							>
-								<img src="/src/assets/svg-icons/arrow-left.svg" alt="" />
+								<img src="/svg-icons/arrow-left.svg" alt="" />
 								Previous
 							</div>
 							{Array.from({ length: 2 }, (_, index) => (
@@ -90,7 +91,7 @@ const Products: React.FC = () => {
 								onClick={() => handlePageNumber('Next')}
 							>
 								Next
-								<img src="/src/assets/svg-icons/right-arrow.svg" alt="" />
+								<img src="/svg-icons/right-arrow.svg" alt="" />
 							</div>
 						</div>
 					</div>
