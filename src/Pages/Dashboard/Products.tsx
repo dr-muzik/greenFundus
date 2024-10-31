@@ -66,7 +66,7 @@ const Products: React.FC = () => {
 					<div className="w-full flex justify-end  mt-6  max-w-[982.5px]">
 						<div className="w-max  flex gap-2 items-center ">
 							<div
-								className="text-sm font-medium cursor-pointer text-[#071b06] flex gap-2 items-center hover:bg-[#dafed9] py-2 px-2 rounded-lg"
+								className="text-sm font-medium cursor-pointer text-primary flex gap-2 items-center hover:bg-[#dafed9] py-2 px-2 rounded-lg"
 								onClick={() => handlePageNumber('Previous')}
 							>
 								<img src="/svg-icons/arrow-left.svg" alt="" />
@@ -78,8 +78,8 @@ const Products: React.FC = () => {
 									onClick={() => handleCurrentPage(index + 1)}
 									className={`cursor-pointer text-sm font-medium px-4 py-[7.5px] hover:bg-[#dafed9] ${
 										currentPage === index + 1
-											? 'bg-[#071b06] text-[#C6FAC4] hover:bg-[#071b06] '
-											: 'text-[#071b06]'
+											? 'bg-primary text-white hover:bg-primary '
+											: 'text-primary'
 									} rounded-lg w-max`}
 								>
 									{index + 1}
@@ -87,7 +87,7 @@ const Products: React.FC = () => {
 							))}
 
 							<div
-								className="cursor-pointer text-sm font-medium text-[#071b06] flex gap-2 items-center hover:bg-[#dafed9] py-2 px-2 rounded-lg"
+								className="cursor-pointer text-sm font-medium text-primary flex gap-2 items-center hover:bg-[#dafed9] py-2 px-2 rounded-lg"
 								onClick={() => handlePageNumber('Next')}
 							>
 								Next

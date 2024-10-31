@@ -102,7 +102,7 @@ const Cart: React.FC = () => {
 				{/* Cart Items Section */}
 				<div className="bg-white rounded-lg w-full lg:max-w-[670px]">
 					<div className="bg-white md:px-16 lg:px-6 p-4 rounded-lg" id="cart-items">
-						<div className="text-lg text-[#071B06] font-semibold pb-4">
+						<div className="text-lg text-secondary font-semibold pb-4">
 							Item List ({cartProducts.length})
 						</div>
 						{cartProducts.length > 0 ? (
@@ -119,15 +119,13 @@ const Cart: React.FC = () => {
 										</div>
 										{/* Product Details */}
 										<div className="flex-1 sm:max-w-[300px] lg:max-w-[400px]">
-											<p className="text-md text-[#071B06] font-medium">{product.productName}</p>
+											<p className="text-md text-secondary font-medium">{product.productName}</p>
 											<p className="text-xs sm:text-sm text-gray-500 leading-5">
 												{product.description}
 											</p>
 										</div>
 										{/* Price Section */}
-										<p className="text-[#35C12F] text-lg text-right w-20 lg:w-16">
-											{product.amount}
-										</p>
+										<p className="text-primary text-lg text-right w-20 lg:w-16">{product.amount}</p>
 									</div>
 									{/* Quantity and Remove Options */}
 									<div className="flex justify-between items-center mt-4">
@@ -142,7 +140,7 @@ const Cart: React.FC = () => {
 											<button
 												onClick={() => handleButtonPlusMinus('minus', index)}
 												className={`p-1 rounded-md ${
-													productQty[index].operand === 'minus' ? 'bg-[#35C12F]' : 'bg-[#cff1cd]'
+													productQty[index].operand === 'minus' ? 'bg-primary' : 'bg-[#FFF3E6]'
 												}`}
 											>
 												<Minus addMinus={productQty[index].operand} />
@@ -151,7 +149,7 @@ const Cart: React.FC = () => {
 											<button
 												onClick={() => handleButtonPlusMinus('add', index)}
 												className={`p-1 rounded-md ${
-													productQty[index].operand === 'add' ? 'bg-[#35C12F]' : 'bg-[#cff1cd]'
+													productQty[index].operand === 'add' ? 'bg-primary' : 'bg-[#FFF3E6]'
 												}`}
 											>
 												<Add addMinus={productQty[index].operand} />
@@ -161,7 +159,7 @@ const Cart: React.FC = () => {
 								</div>
 							))
 						) : (
-							<div className="w-full text-lg text-[#35C12F] italic px-3">
+							<div className="w-full text-lg text-primary italic px-3">
 								Please add item(s) to Cart
 							</div>
 						)}
@@ -170,14 +168,14 @@ const Cart: React.FC = () => {
 
 				{/* Cart Summary Section */}
 				<div className="bg-white w-full max-w-[340px] p-4 rounded-lg mt-8 lg:mt-0 lg:h-max lg:sticky lg:top-24 shadow-sm">
-					<div className="text-lg text-[#071B06] font-semibold pb-4 border-b">Cart Summary</div>
+					<div className="text-lg text-secondary font-semibold pb-4 border-b">Cart Summary</div>
 					<div className="flex justify-between items-center border-b py-4">
-						<p className="text-[#071B06] text-sm">Subtotal</p>
-						<p className="text-[#35C12F] text-lg">${totalAmount}</p>
+						<p className="text-secondary text-sm">Subtotal</p>
+						<p className="text-primary text-lg">${totalAmount}</p>
 					</div>
 					<button
 						onClick={() => handlePayment('Checkout')}
-						className="w-full py-3 mt-4 text-white bg-[#35C12F] rounded-lg hover:bg-green-700 transition"
+						className="w-full py-3 mt-4 text-white bg-primary rounded-lg hover:bg-primary-dark transition"
 					>
 						Proceed with payment
 					</button>

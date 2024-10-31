@@ -38,10 +38,13 @@ const Login: React.FC = () => {
 			<div className="hidden lg:block w-[50%]  bg-cover">
 				<img className="w-full h-full object-contain" src="/images/login.png" alt="signup_image" />
 			</div>
-			<div className="w-full max-w-[442px] lg:max-w-[50%] lg:w-[50%] lg:px-[70px] py-[10px] flex flex-col gap-9  items-center">
+			<div className="w-full max-w-[442px] lg:max-w-[50%] lg:w-[50%] lg:px-[70px] py-[10px] flex flex-col gap-7  items-center">
+				<div>
+					<img src="/svg-icons/logo.svg" alt="logo" />
+				</div>
 				<div className="w-full  max-w-[442px]  ">
 					<h1 className=" text-white font-semibold text-3xl md:text-[40px] mb-2 tracking-[-0.04em]">
-						Welcome <span style={{ color: '#32A22E' }}>Back!</span>
+						Welcome <span className="text-primary">Back!</span>
 					</h1>
 					<p className="text-[#D0D0D0] text-xs md:text-sm">Let's get started for today</p>
 				</div>
@@ -72,16 +75,14 @@ const Login: React.FC = () => {
 							className="py-[16px] px-[14px] w-full rounded-lg bg-inherit"
 						/>
 					</div>
-					<p style={{ color: '#32A22E' }} className="mb-10">
-						Forgot password?
-					</p>
-					<button className="mb-6 text-center p-4 bg-[#35C12F] hover:bg-green-800 transition duration-500 w-full rounded-md text-white">
+					<p className="mb-10 text-primary">Forgot password?</p>
+					<button className="mb-3 text-center p-4 bg-primary hover:bg-primary-dark transition duration-500 w-full rounded-md text-white">
 						LOGIN
 					</button>
 					<div className="w-full text-center">
 						<p className="text-white text-sm">
 							Don't have an account?{' '}
-							<Link to="/" style={{ color: '#32A22E', cursor: 'pointer' }}>
+							<Link to="/" className="text-primary">
 								Sign up
 							</Link>
 						</p>

@@ -1,5 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useTable, Column } from 'react-table';
+import { setActivePage } from '../store/slices/navigationSlice';
 
 type Transaction = {
 	type: string;
@@ -10,6 +13,13 @@ type Transaction = {
 };
 
 const TransactionTable: React.FC = () => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const handlePayments = (link: string) => {
+		dispatch(setActivePage(link));
+		navigate('/dashboard/Payments');
+	};
 	const data = React.useMemo<Transaction[]>(
 		() => [
 			{
@@ -58,9 +68,9 @@ const TransactionTable: React.FC = () => {
 				accessor: 'type',
 				Cell: ({ row }: { row: { original: Transaction } }) => (
 					<div className="flex items-center space-x-2">
-						<div className="hidden sm:block w-10 h-10 rounded-full bg-[#074607]"></div>
+						<div className="hidden sm:block w-10 h-10 rounded-full bg-secondary"></div>
 						<div>
-							<div className="text-[#071B06] font-medium text-base">{row.original.type}</div>
+							<div className="text-secondary font-medium text-base">{row.original.type}</div>
 							<div className="text-xs text-gray-500">{row.original.date}</div>
 						</div>
 					</div>
@@ -110,12 +120,17 @@ const TransactionTable: React.FC = () => {
 	return (
 		<div className="w-full mx-auto p-4">
 			<div className="flex justify-between mb-2">
-				<h2 className="text-xl font-semibold text-[#071b06]">Recent transactions</h2>
-				<p className="text-gray-500 flex gap-3 items-center font-semibold">
+				<h2 className="text-xl font-semibold text-secondary">Recent transactions</h2>
+				<p
+					className="text-gray-500 flex gap-3 items-center font-semibold cursor-pointer"
+					onClick={() => handlePayments('Payments')}
+				>
 					See more transaction
-					<span>
-						<img src="/svg-icons/arrow-right.svg" alt="right-arrow" />
-					</span>
+					{location.pathname !== '/dashboard/Payments' && (
+						<span>
+							<img src="/svg-icons/arrow-right.svg" alt="right-arrow" />
+						</span>
+					)}
 				</p>
 			</div>
 

@@ -1,6 +1,6 @@
 import { ICard } from '../interfaces/interface';
 
-export const navLinks = ['Home', 'Products', 'Insurance', 'Payments', 'Community'];
+export const navLinks = ['Home', 'Insurance', 'Products', 'Payments', 'Community'];
 
 export const navLinksTwo = ['Settings', 'Security'];
 
@@ -15,6 +15,7 @@ export const productCard: ICard[] = [
 		productName: 'Organic Tomatoes',
 		description:
 			'Fresh, juicy organic tomatoes, grown without pesticides. Perfect for salads, sauces, or sandwiches.',
+		insurance: '5%',
 	},
 	{
 		imageUrl: '/images/eggs.png',
@@ -22,6 +23,7 @@ export const productCard: ICard[] = [
 		productName: 'Free-range-eggs',
 		description:
 			'Eggs from free-range chickens, offering rich flavor and golden yolks. Ideal for baking or a hearty breakfast.',
+		insurance: '10%',
 	},
 	{
 		imageUrl: '/images/honey.png',
@@ -29,6 +31,7 @@ export const productCard: ICard[] = [
 		productName: 'Raw Honey',
 		description:
 			'Pure honey collected from local bees, rich in natural enzymes. Great as a sweetener or spread',
+		insurance: '10%',
 	},
 	{
 		imageUrl: '/images/potatoes.png',
@@ -36,6 +39,7 @@ export const productCard: ICard[] = [
 		productName: 'Sweet Potatoes',
 		description:
 			'Potatoes with a naturally sweet flavor, rich in fiber and vitamin A. Ideal for roasting, mashing, or baking',
+		insurance: '10%',
 	},
 	{
 		imageUrl: '/images/berry.png',
@@ -43,6 +47,7 @@ export const productCard: ICard[] = [
 		productName: 'Fresh StrawBerries',
 		description:
 			'Sweet and juicy strawberries, hand-picked at peak ripeness. Perfect for snacking, desserts, or making jam',
+		insurance: '10%',
 	},
 	{
 		imageUrl: '/images/carrot.png',
@@ -50,6 +55,7 @@ export const productCard: ICard[] = [
 		productName: 'Organic Carrots',
 		description:
 			'Crunchy organic carrots, rich in beta-carotene and antioxidants. Ideal for snacking, salads, and soups',
+		insurance: '10%',
 	},
 	{
 		imageUrl: '/images/milk.png',
@@ -57,5 +63,14 @@ export const productCard: ICard[] = [
 		productName: 'Almond Milk',
 		description:
 			'Homemade milk from raw, organic almonds. Dairy-free and perfect for smoothies, cereals, and baking.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/spinach.png',
+		amount: '$300',
+		productName: 'Fresh Spinach',
+		description:
+			'Vibrant spinach leaves, packed with iron and vitamins. Perfect for salads, soups, and green smoothies.',
+		insurance: '10%',
 	},
 ];

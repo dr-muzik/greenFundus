@@ -18,6 +18,7 @@ export interface ICard {
 	productName: string;
 	amount: string;
 	description: string;
+	insurance: string;
 }
 
 export interface IproductCard {

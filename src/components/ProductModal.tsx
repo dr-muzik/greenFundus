@@ -52,7 +52,7 @@ const ProductModal: React.FC = () => {
 			>
 				{/* <!-- Modal Header --> */}
 				<div className="flex justify-between items-center mb-4">
-					<p className="text-base font-semibold text-[#071B06]">Product details</p>
+					<p className="text-base font-semibold text-secondary">Product details</p>
 					<p onClick={closeModal} className="flex items-center gap-1 cursor-pointer">
 						close{' '}
 						<span>
@@ -70,10 +70,10 @@ const ProductModal: React.FC = () => {
 
 				{/* <!-- Product Details --> */}
 				<div className="mb-2 flex justify-between text-xs">
-					<p className="md:text-sm lg:text-base font-semibold text-[#071B06]">
+					<p className="md:text-sm lg:text-base font-semibold text-secondary">
 						{modalProduct?.productName}
 					</p>
-					<p className="text-[#35C12F] md:text-sm lg:text-base font-semibold">
+					<p className="text-primary md:text-sm lg:text-base font-semibold">
 						{modalProduct?.amount}
 					</p>
 				</div>
@@ -85,13 +85,13 @@ const ProductModal: React.FC = () => {
 				<div className="space-y-2">
 					<button
 						onClick={() => ToCheckOut(modalProduct!)}
-						className="w-full py-2 lg:py-[15.5px]  border border-[#35C12F] text-sm font-semibold rounded-lg bg-[#35C12F] transition duration-500 text-white "
+						className="w-full py-2 lg:py-[15.5px]   bg-primary  text-sm font-semibold rounded-lg hover:bg-primary-dark transition duration-500 text-white "
 					>
 						Buy Now
 					</button>
 					<button
 						onClick={() => handleAddToCart(modalProduct!)}
-						className="w-full py-2 lg:py-[15.5px] bg-transparent border  text-[#35C12F]  text-sm font-semibold rounded-lg"
+						className="w-full py-2 lg:py-[15.5px] bg-transparent border-primary border-[1px]  text-primary  text-sm font-semibold rounded-lg"
 					>
 						Add To Cart
 					</button>

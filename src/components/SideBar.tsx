@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import CommunityNavIcon from './nav-svg/CommunityNavIcon';
 import HomeNavIcon from './nav-svg/HomeNavIcon';
 import InsuranceNavIcon from './nav-svg/InsuranceNavIcon';
@@ -18,8 +18,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 const SideBar: React.FC = () => {
 	const isOpen = useSelector((state: RootState) => state.navigation.isOpen);
 	const user = useSelector((state: RootState) => state.user.user);
+	const activePage = useSelector((state: RootState) => state.navigation.activePage);
 	const dispatch = useDispatch();
-	const [activeLink, setActiveLink] = useState('Home');
+	// const [activeLink, setActiveLink] = useState('Home');
 	// const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
@@ -37,7 +38,7 @@ const SideBar: React.FC = () => {
 	const navigate = useNavigate();
 
 	const setLinkActive = (link: string) => {
-		setActiveLink(link);
+		// setActiveLink(link);
 		dispatch(setActivePage(link));
 		dispatch(setIsOpen(false));
 
@@ -83,26 +84,23 @@ const SideBar: React.FC = () => {
 				{navLinks.map((links, index) => (
 					<li
 						key={index}
-						className=" p-3 rounded-lg flex gap-2 font-medium"
-						style={{
-							backgroundColor: activeLink === links ? '#071B06' : '',
-							color: activeLink === links ? '#C6FAC4' : '#758193',
-							cursor: 'pointer',
-						}}
+						className={`p-3 rounded-lg flex gap-2 font-medium ${
+							activePage === links && 'bg-primary text-white'
+						} text-[#758193]`}
 						onClick={() => setLinkActive(links)}
 					>
 						{' '}
 						<span>
 							{links === 'Home' ? (
-								<HomeNavIcon activeLink={activeLink} />
-							) : links === 'Products' ? (
-								<ProductsNavIcon activeLink={activeLink} />
+								<HomeNavIcon activeLink={activePage} />
 							) : links === 'Insurance' ? (
-								<InsuranceNavIcon activeLink={activeLink} />
+								<InsuranceNavIcon activeLink={activePage} />
+							) : links === 'Products' ? (
+								<ProductsNavIcon activeLink={activePage} />
 							) : links === 'Payments' ? (
-								<PaymentNavIcon activeLink={activeLink} />
+								<PaymentNavIcon activeLink={activePage} />
 							) : (
-								<CommunityNavIcon activeLink={activeLink} />
+								<CommunityNavIcon activeLink={activePage} />
 							)}
 						</span>
 						{links}
@@ -118,8 +116,8 @@ const SideBar: React.FC = () => {
 						key={index}
 						className=" p-3 rounded-lg flex gap-2 font-medium"
 						style={{
-							backgroundColor: activeLink === links ? '#071B06' : '',
-							color: activeLink === links ? '#C6FAC4' : '#758193',
+							backgroundColor: activePage === links ? '#071B06' : '',
+							color: activePage === links ? '#C6FAC4' : '#758193',
 							cursor: 'pointer',
 						}}
 						onClick={() => setLinkActive(links)}
@@ -127,9 +125,9 @@ const SideBar: React.FC = () => {
 						{' '}
 						<span>
 							{links === 'Settings' ? (
-								<SettingNavIcon activeLink={activeLink} />
+								<SettingNavIcon activeLink={activePage} />
 							) : (
-								<SecurityNavIcon activeLink={activeLink} />
+								<SecurityNavIcon activeLink={activePage} />
 							)}
 						</span>
 						{links}
@@ -149,7 +147,7 @@ const SideBar: React.FC = () => {
 export default SideBar;
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const navLinks = ['Home', 'Products', 'Insurance', 'Payments', 'Community'];
+export const navLinks = ['Home', 'Insurance', 'Products', 'Payments', 'Community'];
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const navLinksTwo = ['Settings', 'Security'];

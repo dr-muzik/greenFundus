@@ -34,16 +34,16 @@ const Checkout: React.FC = () => {
 			className="pt-4 lg:ml-[242px] border-2 flex flex-col items-center lg:items-start lg:flex-row lg:justify-between"
 		>
 			<div className="pt-20 lg:ps-6 lg:pe-4 p-4 w-full max-w-[571px] lg:max-w-[680px]  rounded-lg shadow-sm cursor-pointer">
-				<p className="flex gap-1 mb-5 text-[#071B06] font-medium" onClick={backToCart}>
+				<p className="flex gap-1 mb-5 text-secondary font-medium" onClick={backToCart}>
 					<img src="/svg-icons/arrow-left.svg" alt="" /> Back to Cart
 				</p>
 				{/* <!-- Delivery Information Section --> */}
 				<div className="mb-8 bg-white rounded-lg w-full p-4">
-					<h2 className="text-lg font-semibold text-[#071B06] mb-4">Delivery Information</h2>
+					<h2 className="text-lg font-semibold text-secondary mb-4">Delivery Information</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						{/* <!-- Full Name --> */}
 						<div>
-							<label className="text-sm font-medium text-[#071B06]">Full Name</label>
+							<label className="text-sm font-medium text-secondary">Full Name</label>
 							<input
 								type="text"
 								placeholder="Jackie Black"
@@ -52,7 +52,7 @@ const Checkout: React.FC = () => {
 						</div>
 						{/* <!-- Phone Number --> */}
 						<div>
-							<label className="text-sm font-medium text-[#071B06]">Phone Number</label>
+							<label className="text-sm font-medium text-secondary">Phone Number</label>
 							<input
 								type="text"
 								placeholder="+234 90000222"
@@ -61,7 +61,7 @@ const Checkout: React.FC = () => {
 						</div>
 						{/* <!-- Email Address --> */}
 						<div className="col-span-1 md:col-span-2">
-							<label className="text-sm font-medium text-[#071B06]">Email Address</label>
+							<label className="text-sm font-medium text-secondary">Email Address</label>
 							<input
 								type="email"
 								placeholder="JackieBlack@gmail.com"
@@ -70,7 +70,7 @@ const Checkout: React.FC = () => {
 						</div>
 						{/* <!-- State --> */}
 						<div>
-							<label className="text-sm font-medium text-[#071B06]">State</label>
+							<label className="text-sm font-medium text-secondary">State</label>
 							<input
 								type="text"
 								placeholder="Enugu"
@@ -79,7 +79,7 @@ const Checkout: React.FC = () => {
 						</div>
 						{/* <!-- LGA --> */}
 						<div>
-							<label className="text-sm font-medium text-[#071B06]">LGA</label>
+							<label className="text-sm font-medium text-secondary">LGA</label>
 							<input
 								type="text"
 								placeholder="Enugu"
@@ -88,7 +88,7 @@ const Checkout: React.FC = () => {
 						</div>
 						{/* <!-- House Address --> */}
 						<div className="col-span-1 md:col-span-2">
-							<label className="text-sm font-medium text-[#071B06]">House Address</label>
+							<label className="text-sm font-medium text-secondary">House Address</label>
 							<input
 								type="text"
 								placeholder="9 Areana street."
@@ -119,7 +119,7 @@ const Checkout: React.FC = () => {
 			{/* purchase summary */}
 			<div className="w-full max-w-[571px] lg:max-w-[400px] p-[14px] lg:mt-28 h-max">
 				<div className="bg-white rounded-lg  p-4 ">
-					<p className="text-base font-semibold text-[#071B06] pb-2">Product Summary</p>
+					<p className="text-base font-semibold text-secondary pb-2">Product Summary</p>
 					{cartProducts.map((product, index) => (
 						<div
 							className="border-t flex gap-3 justify-between md:gap-6 py-4"
@@ -137,9 +137,9 @@ const Checkout: React.FC = () => {
 							{/* Product Details */}
 							<div className="sm:max-w-[300px] w-full lg:max-w-[400px]">
 								<div className="flex justify-between items-center">
-									<p className="text-md text-[#071B06] font-medium">{product.productName}</p>
+									<p className="text-md text-secondary font-medium">{product.productName}</p>
 
-									<p className="text-[#35C12F] text-lg text-right ">{product.amount}</p>
+									<p className="text-primary text-lg text-right ">{product.amount}</p>
 								</div>
 								<p className="text-xs  text-gray-500 leading-5">{product.description}</p>
 							</div>

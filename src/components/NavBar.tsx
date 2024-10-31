@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
 					src="/svg-icons/breadcrumb.svg"
 					alt="breadcrumb"
 				/>
-				<p className="text-2xl font-semibold" style={{ color: '#071B06' }}>
+				<p className="text-2xl font-semibold text-secondary">
 					{activePage === 'Home' ? 'Overview' : activePage}
 				</p>
 			</div>
@@ -52,7 +52,7 @@ const NavBar: React.FC = () => {
 						className="cursor-pointer"
 					/>
 					{productInCart.length > 0 && (
-						<div className="absolute top-[-5px] right-[-5px] text-sm bg-[#35C12F] text-white font-bold rounded-[70%] py-[1px] px-[8px]">
+						<div className="absolute top-[-5px] right-[-5px] text-sm bg-secondary text-white font-bold rounded-[70%] py-[1px] px-[8px]">
 							{productInCart.length}
 						</div>
 					)}
@@ -61,12 +61,8 @@ const NavBar: React.FC = () => {
 					<img width={50} src="/images/Frame 12.png" alt="dp" />
 				</div>
 				<div className="hidden sm:block">
-					<p className="text-lg font-semibold" style={{ color: '#071B06' }}>
-						{user.name}
-					</p>
-					<p className="text-sm" style={{ color: '#289123' }}>
-						Free plan
-					</p>
+					<p className="text-lg font-semibold text-secondary">{user.name}</p>
+					<p className="text-sm text-primary">Free plan</p>
 				</div>
 			</div>
 		</div>

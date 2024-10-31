@@ -39,19 +39,17 @@ const Home: React.FC = () => {
 		>
 			<div className="pt-20 px-3 ">
 				<div>
-					<p className="text-2xl font-semibold" style={{ color: '#071B06' }}>
-						Hi {user.name.split(' ')[0]}
-					</p>
+					<p className="text-2xl text-secondary font-semibold">Hi {user.name.split(' ')[0]}</p>
 					<p className="text-sm">Hello, Welcome Back!</p>
 				</div>
 				<div className="md:flex gap-7 mb-5">
-					<div className="p-7 bg-[#071B06] flex justify-between items-center mt-6 rounded-lg w-full">
+					<div className="p-7 bg-secondary flex justify-between items-center mt-6 rounded-lg w-full">
 						<div className="w-[248px] ">
-							<p className="text-[white] text-sm">Let's get started</p>
-							<p className="text-[#c6fac4] text-lg font-semibold mt-2 mb-4 leading-5">
+							<p className="text-white text-sm">Let's get started</p>
+							<p className="text-white text-lg font-semibold mt-2 mb-4 leading-5">
 								Get the best Insurance for your farm with us
 							</p>
-							<button className="text-[#c6fac4] text-sm font-medium border-2 border-[#c6fac4] rounded-lg px-2 py-[7.5px]">
+							<button className="text-white text-sm font-medium bg-primary rounded-lg px-2 py-[7.5px]">
 								Secure now
 							</button>
 						</div>
@@ -59,13 +57,13 @@ const Home: React.FC = () => {
 							<img src="/svg-icons/security.svg" alt="security" />
 						</div>
 					</div>
-					<div className="p-7 bg-[#ECFDEB] flex justify-between items-center mt-6 rounded-lg w-full">
+					<div className="p-7 bg-[#FFF3E6]  flex justify-between items-center mt-6 rounded-lg w-full">
 						<div className="w-[248px] ">
-							<p className="text-[#071b06] text-sm">Get the best product</p>
-							<p className="text-[#35C12F] text-lg font-semibold mt-2 mb-4 leading-5">
+							<p className="text-primary text-sm">Get the best product</p>
+							<p className="text-primary text-lg font-semibold mt-2 mb-4 leading-5">
 								Purchase good quality farm produce with quality pricing
 							</p>
-							<button className="text-[#35C12F] text-sm font-medium border-2 border-[#35C12F] rounded-lg px-2 py-[7.5px]">
+							<button className="text-primary text-sm font-medium border-2 border-primary rounded-lg px-2 py-[7.5px]">
 								Buy Now
 							</button>
 						</div>

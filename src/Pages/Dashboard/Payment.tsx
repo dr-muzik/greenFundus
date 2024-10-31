@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TransactionTable from '../../components/TransactionTable';
 
 const pageTransition = {
 	initial: { opacity: 0, x: 20 },
@@ -22,7 +23,9 @@ const Payment: React.FC = () => {
 			}}
 			className="pt-4 lg:ml-[242px] border-2 h-screen"
 		>
-			<div className="pt-20 lg:ps-6 pe-4 text-3xl px-5 text-[#758193]">Coming Soon!!!</div>
+			<div className="pt-20 lg:ps-6 pe-4  px-5 text-[#758193]">
+				<TransactionTable />
+			</div>
 		</motion.div>
 	);
 };
