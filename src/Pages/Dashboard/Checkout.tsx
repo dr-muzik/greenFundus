@@ -103,12 +103,12 @@ const Checkout: React.FC = () => {
 					<h2 className="text-lg font-semibold text-gray-900 mb-4">Select Payment Method</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						{/* <!-- Credit/Debit Card --> */}
-						<div className="border border-gray-300 rounded-lg p-4 flex items-center gap-2 cursor-pointer hover:bg-gray-100">
+						<div className="border border-gray-300 flex-col rounded-lg p-4 flex justify-start gap-2 cursor-pointer hover:bg-gray-100">
 							<img src="/svg-icons/card.svg" alt="Card Icon" className="w-5 h-5" />
-							<span className="text-sm font-medium text-gray-700">Credit / Debit Card</span>
+							<span className="text-sm font-medium text-gray-700">Debit Card</span>
 						</div>
 						{/* <!-- Bank Transfer --> */}
-						<div className="border border-gray-300 rounded-lg p-4 flex items-center gap-2 cursor-pointer hover:bg-gray-100">
+						<div className="border border-gray-300 flex-col rounded-lg p-4 flex justify-start gap-2 cursor-pointer hover:bg-gray-100">
 							<img src="/svg-icons/share.svg" alt="Bank Icon" className="w-5 h-5" />
 							<span className="text-sm font-medium text-gray-700">Bank Transfer</span>
 						</div>
