@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { productCard } from '../../dummyData/data';
+import { insuranceCard } from '../../dummyData/data';
 import { ICard } from '../../interfaces/interface';
 import ProductInputs from '../../components/ProductInputs';
 import ProductModal from '../../components/ProductModal';
@@ -15,7 +15,7 @@ const pageTransition = {
 
 const Insurance: React.FC = () => {
 	const [currentPage, setCurrentPage] = useState(1);
-	const [filtereProducts, setFilteredProducts] = useState([...productCard]);
+	const [filtereProducts, setFilteredProducts] = useState([...insuranceCard]);
 
 	const itemsPerPage = 4; // Number of items to show per page
 

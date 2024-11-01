@@ -10,67 +10,134 @@ export const sortedBy2 = ['Insurance', 'Morgage'];
 
 export const productCard: ICard[] = [
 	{
-		imageUrl: '/images/tomatoes.png',
-		amount: '₦30/litre',
-		productName: 'Organic Tomatoes',
+		imageUrl: '/images/pig.jpg',
+		amount: '₦4000',
+		productName: 'Dwarf Pig',
 		description:
-			'Fresh, juicy organic tomatoes, grown without pesticides. Perfect for salads, sauces, or sandwiches.',
+			'Dwarf pigs are small, hardy, disease-resistant, and well-suited to local climates and small farms..',
 		insurance: '5%',
 	},
 	{
-		imageUrl: '/images/eggs.png',
-		amount: '₦30/litre',
-		productName: 'Free-range-eggs',
+		imageUrl: '/images/poultry-birds.jpg',
+		amount: '₦4000',
+		productName: 'Chickens',
 		description:
-			'Eggs from free-range chickens, offering rich flavor and golden yolks. Ideal for baking or a hearty breakfast.',
+			'Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria',
 		insurance: '10%',
 	},
 	{
-		imageUrl: '/images/honey.png',
-		amount: '₦10/litre',
-		productName: 'Raw Honey',
+		imageUrl: '/images/cattle.jpeg',
+		amount: '₦30000',
+		productName: 'Cattle',
 		description:
-			'Pure honey collected from local bees, rich in natural enzymes. Great as a sweetener or spread',
+			'Grass-fed cattle raised on open pastures ensure better health and superior meat quality.',
 		insurance: '10%',
 	},
 	{
-		imageUrl: '/images/potatoes.png',
-		amount: '₦300',
-		productName: 'Sweet Potatoes',
+		imageUrl: '/images/sheep.png',
+		amount: '₦30000',
+		productName: 'Sheeps',
 		description:
-			'Potatoes with a naturally sweet flavor, rich in fiber and vitamin A. Ideal for roasting, mashing, or baking',
+			'African sheep are diverse, hardy breeds known for their resilience, adaptability, and valuable meat and wool.',
 		insurance: '10%',
 	},
 	{
-		imageUrl: '/images/berry.png',
-		amount: '₦300',
-		productName: 'Fresh StrawBerries',
+		imageUrl: '/images/ndama-cattle.jpg',
+		amount: '₦70000',
+		productName: 'Ndama Cattle',
 		description:
-			'Sweet and juicy strawberries, hand-picked at peak ripeness. Perfect for snacking, desserts, or making jam',
+			'These cattles are a hardy breed, known for disease resistance and adaptability to tropical climates.',
 		insurance: '10%',
 	},
 	{
-		imageUrl: '/images/carrot.png',
-		amount: '₦300',
-		productName: 'Organic Carrots',
-		description:
-			'Crunchy organic carrots, rich in beta-carotene and antioxidants. Ideal for snacking, salads, and soups',
-		insurance: '10%',
-	},
-	{
-		imageUrl: '/images/milk.png',
-		amount: '₦300',
-		productName: 'Almond Milk',
+		imageUrl: '/images/nubian-goats.jpeg',
+		amount: '₦45000',
+		productName: 'Nubian Goats',
 		description:
 			'Homemade milk from raw, organic almonds. Dairy-free and perfect for smoothies, cereals, and baking.',
 		insurance: '10%',
 	},
 	{
-		imageUrl: '/images/spinach.png',
-		amount: '₦300',
-		productName: 'Fresh Spinach',
+		imageUrl: '/images/Fulani-Sahel-chicken.jpeg',
+		amount: '₦40000',
+		productName: 'Sahel Chicken',
 		description:
-			'Vibrant spinach leaves, packed with iron and vitamins. Perfect for salads, soups, and green smoothies.',
+			'Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/brown.jpg',
+		amount: '₦30000',
+		productName: 'Brown Cattles',
+		description:
+			'Grass-fed cattle raised on open pastures ensure better health and superior meat quality.',
+		insurance: '10%',
+	},
+];
+
+export const insuranceCard: ICard[] = [
+	{
+		imageUrl: '/images/ndama-cattle.jpg',
+		amount: '₦30000',
+		productName: 'Ndama Cattle',
+		description:
+			'These cattles are a hardy breed, known for disease resistance and adaptability to tropical climates.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/brown.jpg',
+		amount: '₦75000',
+		productName: 'Brown Cattles',
+		description:
+			'Grass-fed cattle raised on open pastures ensure better health and superior meat quality.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/cattle.jpeg',
+		amount: '₦80000',
+		productName: 'Cattle',
+		description:
+			'Grass-fed cattle raised on open pastures ensure better health and superior meat quality.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/nubian-goats.jpeg',
+		amount: '₦40000',
+		productName: 'Nubian Goats',
+		description:
+			'Homemade milk from raw, organic almonds. Dairy-free and perfect for smoothies, cereals, and baking.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/pig.jpg',
+		amount: '₦32000',
+		productName: 'Dwarf Pig',
+		description:
+			'Dwarf pigs are small, hardy, disease-resistant, and well-suited to local climates and small farms..',
+		insurance: '5%',
+	},
+	{
+		imageUrl: '/images/poultry-birds.jpg',
+		amount: '₦10000',
+		productName: 'Chickens',
+		description:
+			'Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/Fulani-Sahel-chicken.jpeg',
+		amount: '₦30',
+		productName: 'Sahel Chicken',
+		description:
+			'Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.',
+		insurance: '10%',
+	},
+	{
+		imageUrl: '/images/sheep.png',
+		amount: '₦300',
+		productName: 'Sheeps',
+		description:
+			'African sheep are diverse, hardy breeds known for their resilience, adaptability, and valuable meat and wool.',
 		insurance: '10%',
 	},
 ];

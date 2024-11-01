@@ -43,12 +43,8 @@ const Register: React.FC = () => {
 			className="bg-black h-screen w-full p-4 lg:p-0 flex justify-center overflow-y-hidden items-center"
 			id="register"
 		>
-			<div className="hidden lg:block w-[50%]  bg-cover">
-				<img
-					className="w-full h-full object-contain"
-					src="/images/register.png"
-					alt="signup_image"
-				/>
+			<div className="hidden lg:block w-[50%]  bg-cover h-screen">
+				<img className="w-full h-full object-cover" src="/images/hen.jpg" alt="signup_image" />
 			</div>
 			<div className="lg:w-[50%] lg:px-[70px] py-[30px] flex flex-col gap-2 max-h-[578px]  items-center">
 				<div>

@@ -67,10 +67,10 @@ const Cart: React.FC = () => {
 		);
 		let newAmount;
 		if (operation === 'add') {
-			newAmount = totalAmount! + +cartProducts[index].amount.split('/')[0].split('$')[1];
+			newAmount = totalAmount! + +cartProducts[index].amount.split('/')[0].split('₦')[1];
 			setTotalAmount(newAmount);
 		} else if (operation === 'minus' && productQty[index].qty > 1) {
-			newAmount = totalAmount! - +cartProducts[index].amount.split('/')[0].split('$')[1];
+			newAmount = totalAmount! - +cartProducts[index].amount.split('/')[0].split('₦')[1];
 			setTotalAmount(newAmount);
 		}
 	};

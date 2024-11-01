@@ -35,8 +35,8 @@ const Login: React.FC = () => {
 			className="bg-black h-screen w-full p-4 lg:p-0 flex justify-center overflow-y-hidden items-center"
 			id="register"
 		>
-			<div className="hidden lg:block w-[50%]  bg-cover">
-				<img className="w-full h-full object-contain" src="/images/login.png" alt="signup_image" />
+			<div className="hidden lg:block w-[50%]  bg-cover  h-screen">
+				<img className="w-full h-full object-cover" src="/images/cover.jpg" alt="signup_image" />
 			</div>
 			<div className="w-full max-w-[442px] lg:max-w-[50%] lg:w-[50%] lg:px-[70px] py-[10px] flex flex-col gap-7  items-center">
 				<div>
