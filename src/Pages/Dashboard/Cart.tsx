@@ -35,7 +35,7 @@ const Cart: React.FC = () => {
 		// console.log(mode);
 		const amount = cartProducts.reduce((total, item) => {
 			if (item.amount !== undefined) {
-				return total + +item.amount.split('/')[0].split('$')[1];
+				return total + +item.amount.split('/')[0].split('₦')[1];
 			}
 			return total;
 		}, 0);
@@ -125,7 +125,9 @@ const Cart: React.FC = () => {
 											</p>
 										</div>
 										{/* Price Section */}
-										<p className="text-primary text-lg text-right w-20 lg:w-16">{product.amount}</p>
+										<p className="text-primary text-lg text-right w-20 lg:w-50%">
+											{product.amount}
+										</p>
 									</div>
 									{/* Quantity and Remove Options */}
 									<div className="flex justify-between items-center mt-4">
@@ -171,7 +173,7 @@ const Cart: React.FC = () => {
 					<div className="text-lg text-secondary font-semibold pb-4 border-b">Cart Summary</div>
 					<div className="flex justify-between items-center border-b py-4">
 						<p className="text-secondary text-sm">Subtotal</p>
-						<p className="text-primary text-lg">${totalAmount}</p>
+						<p className="text-primary text-lg">₦{totalAmount}</p>
 					</div>
 					<button
 						onClick={() => handlePayment('Checkout')}
